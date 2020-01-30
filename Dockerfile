@@ -1,3 +1,5 @@
-FROM jupyterhub/jupyterhub:1.0
+FROM jupyterhub/jupyterhub:1.0.0
 
-RUN pip install dockerspawner
+COPY jupyterhub_magpie_authenticator /jupyterhub_magpie_authenticator
+
+RUN pip install dockerspawner /jupyterhub_magpie_authenticator
